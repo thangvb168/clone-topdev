@@ -1,0 +1,255 @@
+// Prefix
+
+// Topdev = td
+$prefix: 'td-';
+// End Prefix
+
+// Colors
+$primary: #e24c32;
+$primary-lc-5: #fcefed;
+$primary-lc-4: #f8d4ce;
+$primary-lc-3: #ef9e8f;
+$primary-lc-2: #eb8370;
+$primary-lc-1: #e66751;
+$primary-0: $primary;
+$primary-dc-2: #9c2a16;
+$primary-dc-1: #47130a;
+
+$primarys: (
+    primary-lc-5: $primary-lc-5,
+    primary-lc-4: $primary-lc-4,
+    primary-lc-3: $primary-lc-3,
+    primary-lc-2: $primary-lc-2,
+    primary-lc-1: $primary-lc-1,
+    primary-0: $primary-0,
+    primary-dc-2: $primary-dc-2,
+    primary-dc-1: $primary-dc-1,
+);
+
+$neutral-1: #f0f0f0;
+$neutral-2: #e0e0e0;
+$neutral-3: #c2c2c2;
+$neutral-4: #a3a3a3;
+$neutral-5: #858585;
+$neutral-6: #666666;
+$neutral-7: #383e46;
+$neutral-8: #212832;
+$neutrals: (
+    neutral-1: $neutral-1,
+    neutral-2: $neutral-2,
+    neutral-3: $neutral-3,
+    neutral-4: $neutral-4,
+    neutral-5: $neutral-5,
+    neutral-6: $neutral-6,
+    neutral-7: $neutral-7,
+    neutral-8: $neutral-8,
+);
+
+$success-1: #209b25;
+$success-2: #95e999;
+$success-3: #eafbeb;
+$successes: (
+    success-1: $success-1,
+    success-2: $success-2,
+    success-3: $success-3,
+);
+
+$warning-1: #a89208;
+$warning-2: #ead110;
+$warning-3: #fdface;
+$warnings: (
+    warning-1: $warning-1,
+    warning-2: $warning-2,
+    warning-3: $warning-3,
+);
+
+$info-1: #016dd4;
+$info-2: #02b7ff;
+$info-3: #ccfeff;
+$infos: (
+    info-1: $info-1,
+    info-2: $info-2,
+    info-3: $info-3,
+);
+
+$error-1: #d70801;
+$error-2: #fe564b;
+$error-3: #ffeeea;
+$errors: (
+    error-1: $error-1,
+    error-2: $error-2,
+    error-3: $error-3,
+);
+
+$black: #222631;
+$primary: #d34127;
+$dark: #222831;
+$medium: #393e36;
+$bright: #d2d2d2;
+$light: #efefef;
+$white: #ffffff;
+
+$colors: (
+    primary: $primary,
+    black: $black,
+    dark: $dark,
+    medium: $medium,
+    bright: $bright,
+    light: $light,
+    white: $white,
+);
+
+$bg-colors: $colors;
+$text-colors: $colors;
+
+$gradient: linear-gradient(to right, #eb2702 3%, #ff7d25 75%, #ff9d5a 100%);
+// End Colors
+
+// Options
+$enable-container-classes: true;
+$enable-grid-classes: true;
+// End Options
+
+// Spacing
+$spacer: 4px;
+$spacers: (
+    1: $spacer * 1,
+    2: $spacer * 2,
+    3: $spacer * 3,
+    4: $spacer * 4,
+    5: $spacer * 5,
+    6: $spacer * 6,
+    7: $spacer * 7,
+    8: $spacer * 8,
+    10: $spacer * 10,
+    12: $spacer * 12,
+    14: $spacer * 14,
+    16: $spacer * 16,
+    18: $spacer * 18,
+    20: $spacer * 20,
+);
+// End Spacing
+
+// Breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+// End Breakpoints
+
+// Grid Columns
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+
+$gutters: $spacers;
+// End Grid Columns
+
+// Container
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
+);
+
+$container-padding-x: $grid-gutter-width;
+// End Container
+
+// Border
+$border-width: 1px;
+$border-widths: (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px,
+);
+
+$border-style: solid;
+$border-color: #dee2e6;
+
+$border-radius: 0.375rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 1rem;
+$border-radius-xxl: 2rem;
+// End Border
+
+// Typography
+$font-falily-roboto: 'Roboto';
+$font-falily-roboto-bold: 'Roboto-Bold';
+$font-family-base: $font-falily-roboto;
+$font-family-bold: $font-falily-roboto-bold;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$font-weight-base: $font-weight-normal;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+$font-size-base: 1rem;
+
+$h1-font-size: $font-size-base * 1.625;
+$h2-font-size: $font-size-base * 1.375;
+$h3-font-size: $font-size-base * 1.125;
+$h4-font-size: $font-size-base;
+$h5-font-size: $font-size-base * 0.875;
+$h6-font-size: $font-size-base * 0.75;
+
+$headings-line-height: 1.45;
+$headings-color: $dark;
+
+$big-title-font-sizes: (
+    1: 2rem,
+    // 2.5
+    2: 1.5rem,
+    // 2
+);
+
+$display-font-sizes: (
+    1: 1.125rem,
+    // 1.5
+    2: 1rem,
+    // 1.25
+);
+
+// End Typography
+
+// Body
+$body-color: $black;
+$body-bg: $white;
+$body-text-align: null;
+// End Body
+
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-offcanvas-backdrop: 1040;
+$zindex-offcanvas: 1045;
+$zindex-modal-backdrop: 1050;
+$zindex-modal: 1055;
+$zindex-popover: 1070;
+$zindex-tooltip: 1080;
+$zindex-toast: 1090;
+
+$zindex-levels: (
+    n1: -1,
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+);
