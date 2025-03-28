@@ -4,26 +4,6 @@
         --#{$prefix}#{$color}: #{$value};
     }
 
-    @each $color, $value in $neutrals {
-        --#{$prefix}#{$color}: #{$value};
-    }
-
-    @each $color, $value in $successes {
-        --#{$prefix}#{$color}: #{$value};
-    }
-
-    @each $color, $value in $infos {
-        --#{$prefix}#{$color}: #{$value};
-    }
-
-    @each $color, $value in $warnings {
-        --#{$prefix}#{$color}: #{$value};
-    }
-
-    @each $color, $value in $errors {
-        --#{$prefix}#{$color}: #{$value};
-    }
-
     --#{$prefix}gradient: #{$gradient};
     // End Colors
 

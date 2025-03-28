@@ -1,0 +1,9 @@
+// Tint a color by mixing it with white
+@function tint-color($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+// Shade a color by mixing it with black
+@function shade-color($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
