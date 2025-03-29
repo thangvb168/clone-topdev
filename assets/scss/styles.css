@@ -157,6 +157,11 @@ p {
   color: var(--td-btn-hover-color);
   background-color: var(--td-btn-hover-bg);
 }
+.btn.active {
+  text-decoration: none;
+  color: var(--td-btn-hover-color);
+  background-color: var(--td-btn-hover-bg);
+}
 .btn.btn-primary {
   --td-btn-color: #ffffff;
   --td-btn-bg: #d34127;
@@ -736,8 +741,10 @@ p {
   background-clip: padding-box, border-box;
 }
 .btn.btn-outline-gradient:hover {
-  background: linear-gradient(to right, #eb2702 3%, #ff7d25 75%, #ff9d5a 100%);
-  background-clip: padding-box;
+  background-image: linear-gradient(to right, #eb2702 3%, #ff7d25 75%, #ff9d5a 100%), linear-gradient(to right, #eb2702 3%, #ff7d25 75%, #ff9d5a 100%);
+}
+.btn.btn-outline-gradient.active {
+  background-image: linear-gradient(to right, #eb2702 3%, #ff7d25 75%, #ff9d5a 100%), linear-gradient(to right, #eb2702 3%, #ff7d25 75%, #ff9d5a 100%);
 }
 
 .card {
@@ -835,6 +842,52 @@ p {
 
 .card-img-top {
   width: 100%;
+}
+
+.tabs {
+  --td-tabs-bg: #ffffff;
+  --td-tabs-color: #222631;
+  --td-tabs-direction: column;
+  --td-tabs-nav-direction: row;
+  --td-tabs-nav-align: center;
+  --td-tabs-nav-justify: space-around;
+  background-color: var(--td-tabs-bg);
+  color: var(--td-tabs-color);
+  display: flex;
+  flex-direction: var(--td-tabs-direction);
+}
+.tabs.tabs-nav-align-center {
+  --td-tabs-nav-align: center;
+  --td-tabs-nav-justify: center;
+}
+.tabs.tabs-nav-align-start {
+  --td-tabs-nav-align: center;
+  --td-tabs-nav-justify: flex-start;
+}
+.tabs.tabs-nav-vertical {
+  --td-tabs-direction: row;
+  --td-tabs-nav-direction: column;
+  --td-tabs-nav-align: flex-start;
+  --td-tabs-nav-justify: flex-start;
+}
+.tabs .tabs-nav {
+  display: flex;
+  flex-direction: var(--td-tabs-nav-direction);
+  justify-content: var(--td-tabs-nav-justify);
+  align-items: var(--td-tabs-nav-align);
+}
+.tabs .tabs-nav > .tabs-nav-button {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.tabs .tabs-content {
+  flex-grow: 1;
+}
+.tabs .tabs-content-panel {
+  display: none;
+}
+.tabs .tabs-content-panel.active {
+  display: block;
 }
 
 .line {

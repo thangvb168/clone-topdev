@@ -49,6 +49,12 @@
         // box-shadow: var(--#{$prefix}btn-box-shadow);
     }
 
+    &.active {
+        text-decoration: none;
+        color: var(--#{$prefix}btn-hover-color);
+        background-color: var(--#{$prefix}btn-hover-bg);
+    }
+
     @each $name, $value in $colors {
         &.btn-#{$name} {
             $text-color: if(lightness($value) > 50%, $dark, $white);
@@ -110,8 +116,11 @@
         background-clip: padding-box, border-box;
 
         &:hover {
-            background: #{$gradient};
-            background-clip: padding-box;
+            background-image: #{$gradient}, #{$gradient};
+        }
+
+        &.active {
+            background-image: #{$gradient}, #{$gradient};
         }
     }
 }
