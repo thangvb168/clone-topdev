@@ -851,6 +851,7 @@ p {
   --td-tabs-nav-direction: column;
   --td-tabs-nav-align: center;
   --td-tabs-nav-justify: space-around;
+  --td-tabs-nav-button-width: 100%;
   background-color: var(--td-tabs-bg);
   color: var(--td-tabs-color);
   display: flex;
@@ -860,6 +861,7 @@ p {
   .tabs {
     --td-tabs-direction: column;
     --td-tabs-nav-direction: row;
+    --td-tabs-nav-button-width: auto;
   }
   .tabs.tabs-nav-align-center {
     --td-tabs-nav-align: center;
@@ -874,6 +876,7 @@ p {
     --td-tabs-nav-direction: column;
     --td-tabs-nav-align: flex-start;
     --td-tabs-nav-justify: flex-start;
+    --td-tabs-nav-button-width: 100%;
   }
 }
 .tabs .tabs-nav {
@@ -883,7 +886,7 @@ p {
   align-items: var(--td-tabs-nav-align);
 }
 .tabs .tabs-nav > .tabs-nav-button {
-  width: 100%;
+  width: var(--td-tabs-nav-button-width);
   white-space: nowrap;
   transition: all 0.3s ease-in-out;
 }
