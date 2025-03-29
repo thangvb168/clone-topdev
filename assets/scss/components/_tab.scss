@@ -12,8 +12,8 @@
 
     @include media-breakpoint-up(lg) {
         & {
-            --#{$prefix}tabs-direction: row;
-            --#{$prefix}tabs-nav-direction: column;
+            --#{$prefix}tabs-direction: column;
+            --#{$prefix}tabs-nav-direction: row;
         }
 
         &.tabs-nav-align-center {

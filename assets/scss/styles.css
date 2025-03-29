@@ -858,8 +858,8 @@ p {
 }
 @media (min-width: 992px) {
   .tabs {
-    --td-tabs-direction: row;
-    --td-tabs-nav-direction: column;
+    --td-tabs-direction: column;
+    --td-tabs-nav-direction: row;
   }
   .tabs.tabs-nav-align-center {
     --td-tabs-nav-align: center;
