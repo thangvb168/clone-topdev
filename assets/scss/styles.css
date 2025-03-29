@@ -848,7 +848,7 @@ p {
   --td-tabs-bg: #ffffff;
   --td-tabs-color: #222631;
   --td-tabs-direction: column;
-  --td-tabs-nav-direction: row;
+  --td-tabs-nav-direction: column;
   --td-tabs-nav-align: center;
   --td-tabs-nav-justify: space-around;
   background-color: var(--td-tabs-bg);
@@ -856,19 +856,25 @@ p {
   display: flex;
   flex-direction: var(--td-tabs-direction);
 }
-.tabs.tabs-nav-align-center {
-  --td-tabs-nav-align: center;
-  --td-tabs-nav-justify: center;
-}
-.tabs.tabs-nav-align-start {
-  --td-tabs-nav-align: center;
-  --td-tabs-nav-justify: flex-start;
-}
-.tabs.tabs-nav-vertical {
-  --td-tabs-direction: row;
-  --td-tabs-nav-direction: column;
-  --td-tabs-nav-align: flex-start;
-  --td-tabs-nav-justify: flex-start;
+@media (min-width: 992px) {
+  .tabs {
+    --td-tabs-direction: row;
+    --td-tabs-nav-direction: column;
+  }
+  .tabs.tabs-nav-align-center {
+    --td-tabs-nav-align: center;
+    --td-tabs-nav-justify: center;
+  }
+  .tabs.tabs-nav-align-start {
+    --td-tabs-nav-align: center;
+    --td-tabs-nav-justify: flex-start;
+  }
+  .tabs.tabs-nav-vertical {
+    --td-tabs-direction: row;
+    --td-tabs-nav-direction: column;
+    --td-tabs-nav-align: flex-start;
+    --td-tabs-nav-justify: flex-start;
+  }
 }
 .tabs .tabs-nav {
   display: flex;
@@ -878,6 +884,7 @@ p {
 }
 .tabs .tabs-nav > .tabs-nav-button {
   width: 100%;
+  white-space: nowrap;
   transition: all 0.3s ease-in-out;
 }
 .tabs .tabs-content {

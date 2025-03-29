@@ -1,9 +1,8 @@
 .tabs {
-    $direction: column;
     --#{$prefix}tabs-bg: #{$white};
     --#{$prefix}tabs-color: #{$black};
-    --#{$prefix}tabs-direction: #{$direction};
-    --#{$prefix}tabs-nav-direction: #{if($direction == column, row, column)};
+    --#{$prefix}tabs-direction: column;
+    --#{$prefix}tabs-nav-direction: column;
     --#{$prefix}tabs-nav-align: center;
     --#{$prefix}tabs-nav-justify: space-around;
     background-color: var(--#{$prefix}tabs-bg);
@@ -11,19 +10,26 @@
     display: flex;
     flex-direction: var(--#{$prefix}tabs-direction);
 
-    &.tabs-nav-align-center {
-        --#{$prefix}tabs-nav-align: center;
-        --#{$prefix}tabs-nav-justify: center;
-    }
-    &.tabs-nav-align-start {
-        --#{$prefix}tabs-nav-align: center;
-        --#{$prefix}tabs-nav-justify: flex-start;
-    }
-    &.tabs-nav-vertical {
-        --#{$prefix}tabs-direction: row;
-        --#{$prefix}tabs-nav-direction: column;
-        --#{$prefix}tabs-nav-align: flex-start;
-        --#{$prefix}tabs-nav-justify: flex-start;
+    @include media-breakpoint-up(lg) {
+        & {
+            --#{$prefix}tabs-direction: row;
+            --#{$prefix}tabs-nav-direction: column;
+        }
+
+        &.tabs-nav-align-center {
+            --#{$prefix}tabs-nav-align: center;
+            --#{$prefix}tabs-nav-justify: center;
+        }
+        &.tabs-nav-align-start {
+            --#{$prefix}tabs-nav-align: center;
+            --#{$prefix}tabs-nav-justify: flex-start;
+        }
+        &.tabs-nav-vertical {
+            --#{$prefix}tabs-direction: row;
+            --#{$prefix}tabs-nav-direction: column;
+            --#{$prefix}tabs-nav-align: flex-start;
+            --#{$prefix}tabs-nav-justify: flex-start;
+        }
     }
 
     .tabs-nav {
@@ -34,6 +40,7 @@
 
         & > .tabs-nav-button {
             width: 100%;
+            white-space: nowrap;
             transition: all 0.3s ease-in-out;
         }
     }
