@@ -1,0 +1,39 @@
+.line {
+    --#{$prefix}line-color: #{$black};
+    --#{$prefix}line-width: 1px;
+    --#{$prefix}line-style: solid;
+
+    width: 100%;
+    height: 0;
+    border-top: var(--#{$prefix}line-width) var(--#{$prefix}line-style)
+        var(--#{$prefix}line-color);
+
+    &-dashed {
+        --#{$prefix}line-style: dashed;
+    }
+
+    &-dotted {
+        --#{$prefix}line-style: dotted;
+    }
+
+    &-dashed-x2 {
+        --#{$prefix}line-dashed-width: 6px;
+        border-width: 1px;
+        border-style: var(--#{$prefix}line-style);
+
+        border-image: repeating-linear-gradient(
+                to right,
+                var(--#{$prefix}line-color) 0,
+                var(--#{$prefix}line-color) var(--#{$prefix}line-dashed-width),
+                transparent var(--#{$prefix}line-dashed-width),
+                transparent calc(var(--#{$prefix}line-dashed-width) * 2)
+            )
+            1;
+    }
+
+    @each $color, $value in $colors {
+        &-#{$color} {
+            --#{$prefix}line-color: #{$value};
+        }
+    }
+}

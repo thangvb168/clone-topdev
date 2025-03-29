@@ -21,6 +21,7 @@ body {
     line-height: $headings-line-height;
     letter-spacing: 0;
     color: var(--#{$prefix}heading-color);
+    margin: 0;
 }
 
 h1 {
@@ -65,4 +66,8 @@ ul {
 a {
     text-decoration: none;
     color: #{$black};
+}
+
+p {
+    margin: 0;
 }
