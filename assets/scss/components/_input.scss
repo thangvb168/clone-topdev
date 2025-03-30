@@ -1,0 +1,50 @@
+.input {
+    --#{$prefix}-input-padding-y: 0.75rem;
+    --#{$prefix}-input-padding-x: 2rem;
+    --#{$prefix}-input-border-radius: #{$border-radius};
+    --#{$prefix}-icon-size: 1.5rem;
+    --#{$prefix}-icon-gap: 1.5rem;
+    --#{$prefix}-input-height: 3rem;
+
+    &.input-small {
+        --#{$prefix}-input-padding-y: 0.5rem;
+        --#{$prefix}-input-padding-x: 1.5rem;
+        --#{$prefix}-input-height: 2.5rem;
+        --#{$prefix}-icon-size: 1.25rem;
+    }
+
+    &.input-large {
+        --#{$prefix}-input-padding-y: 1rem;
+        --#{$prefix}-input-padding-x: 2.5rem;
+        --#{$prefix}-input-height: 4rem;
+        --#{$prefix}-icon-size: 2rem;
+    }
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--#{$prefix}-input-height);
+    border-radius: var(--#{$prefix}-input-border-radius);
+    background-color: var(--#{$prefix}-input-bg, transparent);
+    padding: var(--#{$prefix}-input-padding-y) var(--#{$prefix}-input-padding-x);
+    gap: var(--#{$prefix}-icon-gap);
+
+    .input-label {
+        display: flex;
+        align-items: center;
+        font-size: var(--#{$prefix}-icon-size);
+    }
+
+    .form-control {
+        flex: 1 1 auto;
+        outline: none;
+        border: none;
+        white-space: nowrap;
+        background-color: transparent;
+        min-width: 0;
+
+        &::placeholder {
+            color: $neutral-7;
+        }
+    }
+}
