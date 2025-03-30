@@ -1025,6 +1025,32 @@ p {
   color: #383e46;
 }
 
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.slider #customNext, .slider #customPrev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  background-color: #666666;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  color: white;
+}
+.slider #customPrev {
+  left: 1rem;
+}
+.slider #customNext {
+  right: 1rem;
+}
+
 .line {
   --td-line-color: #222631;
   --td-line-width: 1px;
