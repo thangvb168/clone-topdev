@@ -11469,10 +11469,12 @@ footer {
 .owl-carousel .owl-dots .owl-dot.active {
   opacity: 1;
 }
-.owl-carousel .owl-stage-outer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (min-width: 992px) {
+  .owl-carousel .owl-stage-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .bottom-menu {
