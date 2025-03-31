@@ -920,9 +920,9 @@ p {
   --td-dropdown-left: 0;
   --td-dropdown-right: auto;
   --td-dropdown-position: relative;
-  --td-dropdown-bg: $white;
-  --td-dropdown-color: $black;
-  --td-dropdown-border-radius: $border-radius-lg;
+  --td-dropdown-bg: #ffffff;
+  --td-dropdown-color: #222631;
+  --td-dropdown-border-radius: 0.5rem;
   --td-dropdown-box-shadow: 0 13px 42px 11px rgba(0, 0, 0, 0.15);
   position: var(--td-dropdown-position);
   display: inline-block;
@@ -946,17 +946,6 @@ p {
   cursor: pointer;
   display: flex;
   align-items: center;
-}
-.dropdown .dropdown-toggle::after {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 0.3rem solid transparent;
-  border-right: 0.3rem solid transparent;
-  border-top: 0.4rem solid white;
-  transition: transform 0.3s ease-in-out;
-  margin-left: 0.25rem;
 }
 .dropdown:hover .dropdown-menu {
   visibility: visible;
@@ -1066,7 +1055,6 @@ p {
 .slider #customNext {
   right: 1rem;
 }
-
 .line {
   --td-line-color: #222631;
   --td-line-width: 1px;
@@ -11415,6 +11403,7 @@ p {
 }
 
 #hero-section .img_banner {
+  width: 100%;
   max-width: 295px;
 }
 @media (min-width: 768px) {
@@ -11450,4 +11439,33 @@ footer {
   footer {
     display: block;
   }
+}
+
+.btn span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.owl-carousel .owl-dots {
+  text-align: center;
+}
+.owl-carousel .owl-dots .owl-dot {
+  margin: 0 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #222631;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.owl-carousel .owl-dots .owl-dot.active {
+  opacity: 1;
 }/*# sourceMappingURL=styles.css.map */

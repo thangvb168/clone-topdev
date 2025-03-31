@@ -89,10 +89,10 @@
                             class="d-flex flex-xxl-row-reverse align-items-center justify-content-between"
                         >
                             <div
-                                class="profile d-flex align-items-center justify-content-center px-2 py-1"
+                                class="profile d-flex align-items-center justify-content-center"
                             >
                                 <div
-                                    class="dropdown dropdown-right js-dropdown"
+                                    class="dropdown dropdown-left js-dropdown px-2 py-1"
                                 >
                                     <div
                                         class="dropdown-toggle gap-4 js-dropdown-toggle"
@@ -103,12 +103,13 @@
                                                 alt="Avatar"
                                             />
                                         </div>
-                                        <span class="text-start body-1">
+                                        <div class="text-start">
                                             <p class="small-headline">
                                                 Nguyễn Tấn Đạt
                                             </p>
                                             <p class="botton-label">UI UX</p>
-                                        </span>
+                                        </div>
+                                        <i class="fa-solid fa-chevron-down"></i>
                                     </div>
                                     <ul class="dropdown-menu js-dropdown-menu">
                                         <li
@@ -162,10 +163,17 @@
                         <div class="col-6 col-md-3 col-xxl-2 text-center">
                             <div class="dropdown js-dropdown w-100">
                                 <button
-                                    class="dropdown-toggle gap-6 btn btn-neutral-1 py-3 ps-8 pe-4 w-100 border-0 js-dropdown-toggle"
+                                    class="dropdown-toggle btn btn-neutral-1 py-3 px-4 w-100 border-0 js-dropdown-toggle d-flex align-items-center justify-content-between"
                                 >
-                                    <i class="fa-solid fa-location fs-6"></i>
-                                    <span class="body-1">Dropdown</span>
+                                    <div
+                                        class="d-flex align-items-center gap-2"
+                                    >
+                                        <i
+                                            class="fa-solid fa-location-dot fs-6 ms-sm-6"
+                                        ></i>
+                                        <span class="body-1">Vị trí</span>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down"></i>
                                 </button>
                                 <ul class="dropdown-menu js-dropdown-menu">
                                     <li class="dropdown-item js-dropdown-item">
@@ -189,19 +197,25 @@
                             </button>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center gap-3">
-                        <button class="btn btn-outline-gradient py-2 px-4">
-                            <span class="small-headline">New Job</span>
-                        </button>
-                        <button class="btn btn-outline-gradient py-2 px-4">
-                            <span class="small-headline">Part Time</span>
-                        </button>
-                        <button class="btn btn-outline-gradient py-2 px-4">
-                            <span class="small-headline">Full Time</span>
-                        </button>
-                        <button class="btn btn-outline-gradient py-2 px-4">
-                            <span class="small-headline">Work from Home</span>
-                        </button>
+                    <div class="text-center w-100">
+                        <div
+                            class="owl-carousel-hero-features owl-carousel owl-theme"
+                        >
+                            <button class="btn btn-outline-gradient py-2 px-4">
+                                <span class="small-headline">New Job</span>
+                            </button>
+                            <button class="btn btn-outline-gradient py-2 px-4">
+                                <span class="small-headline">Part Time</span>
+                            </button>
+                            <button class="btn btn-outline-gradient py-2 px-4">
+                                <span class="small-headline">Full Time</span>
+                            </button>
+                            <button class="btn btn-outline-gradient py-2 px-4">
+                                <span class="small-headline"
+                                    >Work from Home</span
+                                >
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -358,6 +372,57 @@
                                     <div class="card-header gap-4">
                                         <div class="card-logo">
                                             <img
+                                                src="/assets/image/spotlight-section/logo/img_logo_chotot.png"
+                                                alt="Logo"
+                                            />
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="display-2">
+                                                Product Manager
+                                            </h2>
+                                            <p class="text-primary extra-small">
+                                                Up to 500$
+                                            </p>
+                                        </div>
+                                        <i
+                                            class="fa-solid fa-bookmark fs-4"
+                                        ></i>
+                                    </div>
+                                    <div
+                                        class="line line-dashed-x2 line-neutral-5 my-5"
+                                    ></div>
+                                    <div class="card-body gap-2">
+                                        <div
+                                            class="d-flex gap-4 text-neutral-7"
+                                        >
+                                            <span
+                                                ><i
+                                                    class="fa-solid fa-laptop-file fs-4"
+                                                ></i>
+                                                Remote</span
+                                            >
+                                            <span
+                                                ><i
+                                                    class="fa-regular fa-clock fs-4"
+                                                ></i>
+                                                Full Time</span
+                                            >
+                                        </div>
+                                        <p class="card-body-description">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipisicing elit.
+                                            Laboriosam impedit expedita
+                                            reprehenderit non cupiditate totam
+                                            similique sit molestias officia
+                                            repellat quasi amet iure, eum velit.
+                                            Impedit veniam amet ex cumque?
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card card-job">
+                                    <div class="card-header gap-4">
+                                        <div class="card-logo">
+                                            <img
                                                 src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
                                                 alt="Logo"
                                             />
@@ -371,7 +436,7 @@
                                             </p>
                                         </div>
                                         <i
-                                            class="icon icon-archive-tick fs-4 card-action"
+                                            class="fa-solid fa-bookmark fs-4"
                                         ></i>
                                     </div>
                                     <div
@@ -383,13 +448,64 @@
                                         >
                                             <span
                                                 ><i
-                                                    class="icon icon-archive-tick fs-4"
+                                                    class="fa-solid fa-laptop-file fs-4"
                                                 ></i>
                                                 Remote</span
                                             >
                                             <span
                                                 ><i
-                                                    class="icon icon-archive-tick fs-4"
+                                                    class="fa-regular fa-clock fs-4"
+                                                ></i>
+                                                Full Time</span
+                                            >
+                                        </div>
+                                        <p class="card-body-description">
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipisicing elit.
+                                            Laboriosam impedit expedita
+                                            reprehenderit non cupiditate totam
+                                            similique sit molestias officia
+                                            repellat quasi amet iure, eum velit.
+                                            Impedit veniam amet ex cumque?
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card card-job">
+                                    <div class="card-header gap-4">
+                                        <div class="card-logo">
+                                            <img
+                                                src="/assets/image/spotlight-section/logo/img_logo_viettel.png"
+                                                alt="Logo"
+                                            />
+                                        </div>
+                                        <div class="card-title">
+                                            <h2 class="display-2">
+                                                Product Manager
+                                            </h2>
+                                            <p class="text-primary extra-small">
+                                                Up to 500$
+                                            </p>
+                                        </div>
+                                        <i
+                                            class="fa-solid fa-bookmark fs-4"
+                                        ></i>
+                                    </div>
+                                    <div
+                                        class="line line-dashed-x2 line-neutral-5 my-5"
+                                    ></div>
+                                    <div class="card-body gap-2">
+                                        <div
+                                            class="d-flex gap-4 text-neutral-7"
+                                        >
+                                            <span
+                                                ><i
+                                                    class="fa-solid fa-laptop-file fs-4"
+                                                ></i>
+                                                Remote</span
+                                            >
+                                            <span
+                                                ><i
+                                                    class="fa-regular fa-clock fs-4"
                                                 ></i>
                                                 Full Time</span
                                             >
@@ -468,7 +584,7 @@
                                 <div class="card-header gap-4">
                                     <div class="card-logo">
                                         <img
-                                            src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
+                                            src="/assets/image/spotlight-section/logo/img_logo_chotot.png"
                                             alt="Logo"
                                         />
                                     </div>
@@ -480,9 +596,7 @@
                                             Up to 500$
                                         </p>
                                     </div>
-                                    <i
-                                        class="icon icon-archive-tick fs-4 card-action"
-                                    ></i>
+                                    <i class="fa-solid fa-bookmark fs-4"></i>
                                 </div>
                                 <div
                                     class="line line-dashed-x2 line-neutral-5 my-5"
@@ -491,13 +605,13 @@
                                     <div class="d-flex gap-4 text-neutral-7">
                                         <span
                                             ><i
-                                                class="icon icon-archive-tick fs-4"
+                                                class="fa-solid fa-laptop-file fs-4"
                                             ></i>
                                             Remote</span
                                         >
                                         <span
                                             ><i
-                                                class="icon icon-archive-tick fs-4"
+                                                class="fa-regular fa-clock fs-4"
                                             ></i>
                                             Full Time</span
                                         >
@@ -528,9 +642,7 @@
                                             Up to 500$
                                         </p>
                                     </div>
-                                    <i
-                                        class="icon icon-archive-tick fs-4 card-action"
-                                    ></i>
+                                    <i class="fa-solid fa-bookmark fs-4"></i>
                                 </div>
                                 <div
                                     class="line line-dashed-x2 line-neutral-5 my-5"
@@ -539,13 +651,13 @@
                                     <div class="d-flex gap-4 text-neutral-7">
                                         <span
                                             ><i
-                                                class="icon icon-archive-tick fs-4"
+                                                class="fa-solid fa-laptop-file fs-4"
                                             ></i>
                                             Remote</span
                                         >
                                         <span
                                             ><i
-                                                class="icon icon-archive-tick fs-4"
+                                                class="fa-regular fa-clock fs-4"
                                             ></i>
                                             Full Time</span
                                         >
@@ -564,7 +676,7 @@
                                 <div class="card-header gap-4">
                                     <div class="card-logo">
                                         <img
-                                            src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
+                                            src="/assets/image/spotlight-section/logo/img_logo_viettel.png"
                                             alt="Logo"
                                         />
                                     </div>
@@ -576,9 +688,7 @@
                                             Up to 500$
                                         </p>
                                     </div>
-                                    <i
-                                        class="icon icon-archive-tick fs-4 card-action"
-                                    ></i>
+                                    <i class="fa-solid fa-bookmark fs-4"></i>
                                 </div>
                                 <div
                                     class="line line-dashed-x2 line-neutral-5 my-5"
@@ -587,253 +697,13 @@
                                     <div class="d-flex gap-4 text-neutral-7">
                                         <span
                                             ><i
-                                                class="icon icon-archive-tick fs-4"
+                                                class="fa-solid fa-laptop-file fs-4"
                                             ></i>
                                             Remote</span
                                         >
                                         <span
                                             ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Full Time</span
-                                        >
-                                    </div>
-                                    <p class="card-body-description">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Laboriosam impedit
-                                        expedita reprehenderit non cupiditate
-                                        totam similique sit molestias officia
-                                        repellat quasi amet iure, eum velit.
-                                        Impedit veniam amet ex cumque?
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card card-job">
-                                <div class="card-header gap-4">
-                                    <div class="card-logo">
-                                        <img
-                                            src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
-                                            alt="Logo"
-                                        />
-                                    </div>
-                                    <div class="card-title">
-                                        <h2 class="display-2">
-                                            Product Manager
-                                        </h2>
-                                        <p class="text-primary extra-small">
-                                            Up to 500$
-                                        </p>
-                                    </div>
-                                    <i
-                                        class="icon icon-archive-tick fs-4 card-action"
-                                    ></i>
-                                </div>
-                                <div
-                                    class="line line-dashed-x2 line-neutral-5 my-5"
-                                ></div>
-                                <div class="card-body gap-2">
-                                    <div class="d-flex gap-4 text-neutral-7">
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Remote</span
-                                        >
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Full Time</span
-                                        >
-                                    </div>
-                                    <p class="card-body-description">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Laboriosam impedit
-                                        expedita reprehenderit non cupiditate
-                                        totam similique sit molestias officia
-                                        repellat quasi amet iure, eum velit.
-                                        Impedit veniam amet ex cumque?
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card card-job">
-                                <div class="card-header gap-4">
-                                    <div class="card-logo">
-                                        <img
-                                            src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
-                                            alt="Logo"
-                                        />
-                                    </div>
-                                    <div class="card-title">
-                                        <h2 class="display-2">
-                                            Product Manager
-                                        </h2>
-                                        <p class="text-primary extra-small">
-                                            Up to 500$
-                                        </p>
-                                    </div>
-                                    <i
-                                        class="icon icon-archive-tick fs-4 card-action"
-                                    ></i>
-                                </div>
-                                <div
-                                    class="line line-dashed-x2 line-neutral-5 my-5"
-                                ></div>
-                                <div class="card-body gap-2">
-                                    <div class="d-flex gap-4 text-neutral-7">
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Remote</span
-                                        >
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Full Time</span
-                                        >
-                                    </div>
-                                    <p class="card-body-description">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Laboriosam impedit
-                                        expedita reprehenderit non cupiditate
-                                        totam similique sit molestias officia
-                                        repellat quasi amet iure, eum velit.
-                                        Impedit veniam amet ex cumque?
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card card-job">
-                                <div class="card-header gap-4">
-                                    <div class="card-logo">
-                                        <img
-                                            src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
-                                            alt="Logo"
-                                        />
-                                    </div>
-                                    <div class="card-title">
-                                        <h2 class="display-2">
-                                            Product Manager
-                                        </h2>
-                                        <p class="text-primary extra-small">
-                                            Up to 500$
-                                        </p>
-                                    </div>
-                                    <i
-                                        class="icon icon-archive-tick fs-4 card-action"
-                                    ></i>
-                                </div>
-                                <div
-                                    class="line line-dashed-x2 line-neutral-5 my-5"
-                                ></div>
-                                <div class="card-body gap-2">
-                                    <div class="d-flex gap-4 text-neutral-7">
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Remote</span
-                                        >
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Full Time</span
-                                        >
-                                    </div>
-                                    <p class="card-body-description">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Laboriosam impedit
-                                        expedita reprehenderit non cupiditate
-                                        totam similique sit molestias officia
-                                        repellat quasi amet iure, eum velit.
-                                        Impedit veniam amet ex cumque?
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card card-job">
-                                <div class="card-header gap-4">
-                                    <div class="card-logo">
-                                        <img
-                                            src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
-                                            alt="Logo"
-                                        />
-                                    </div>
-                                    <div class="card-title">
-                                        <h2 class="display-2">
-                                            Product Manager
-                                        </h2>
-                                        <p class="text-primary extra-small">
-                                            Up to 500$
-                                        </p>
-                                    </div>
-                                    <i
-                                        class="icon icon-archive-tick fs-4 card-action"
-                                    ></i>
-                                </div>
-                                <div
-                                    class="line line-dashed-x2 line-neutral-5 my-5"
-                                ></div>
-                                <div class="card-body gap-2">
-                                    <div class="d-flex gap-4 text-neutral-7">
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Remote</span
-                                        >
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Full Time</span
-                                        >
-                                    </div>
-                                    <p class="card-body-description">
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Laboriosam impedit
-                                        expedita reprehenderit non cupiditate
-                                        totam similique sit molestias officia
-                                        repellat quasi amet iure, eum velit.
-                                        Impedit veniam amet ex cumque?
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="card card-job">
-                                <div class="card-header gap-4">
-                                    <div class="card-logo">
-                                        <img
-                                            src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
-                                            alt="Logo"
-                                        />
-                                    </div>
-                                    <div class="card-title">
-                                        <h2 class="display-2">
-                                            Product Manager
-                                        </h2>
-                                        <p class="text-primary extra-small">
-                                            Up to 500$
-                                        </p>
-                                    </div>
-                                    <i
-                                        class="icon icon-archive-tick fs-4 card-action"
-                                    ></i>
-                                </div>
-                                <div
-                                    class="line line-dashed-x2 line-neutral-5 my-5"
-                                ></div>
-                                <div class="card-body gap-2">
-                                    <div class="d-flex gap-4 text-neutral-7">
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
-                                            ></i>
-                                            Remote</span
-                                        >
-                                        <span
-                                            ><i
-                                                class="icon icon-archive-tick fs-4"
+                                                class="fa-regular fa-clock fs-4"
                                             ></i>
                                             Full Time</span
                                         >
@@ -849,7 +719,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="dots"></div> -->
                         <button id="customPrev">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
@@ -867,7 +736,9 @@
                     <div
                         class="tabs-featured-suggestion tabs tabs-nav-align-start js-tabs-job"
                     >
-                        <div class="tabs-nav gap-3 mb-4">
+                        <div
+                            class="owl-carousel-tabs owl-carousel owl-theme tabs-nav gap-3 mb-4"
+                        >
                             <button
                                 class="tabs-nav-button btn btn-neutral-1 px-4 py-2 me-2 js-tab-button"
                                 data-tab-target="#tab-job-1"
@@ -924,7 +795,7 @@
                                             <div class="card-header gap-4">
                                                 <div class="card-logo">
                                                     <img
-                                                        src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
+                                                        src="/assets/image/spotlight-section/logo/img_logo_chotot.png"
                                                         alt="Logo"
                                                     />
                                                 </div>
@@ -939,7 +810,7 @@
                                                     </p>
                                                 </div>
                                                 <i
-                                                    class="icon icon-archive-tick fs-4 card-action"
+                                                    class="fa-solid fa-bookmark fs-4"
                                                 ></i>
                                             </div>
                                             <div
@@ -951,13 +822,13 @@
                                                 >
                                                     <span
                                                         ><i
-                                                            class="icon icon-archive-tick fs-4"
+                                                            class="fa-solid fa-laptop-file fs-4"
                                                         ></i>
                                                         Remote</span
                                                     >
                                                     <span
                                                         ><i
-                                                            class="icon icon-archive-tick fs-4"
+                                                            class="fa-regular fa-clock fs-4"
                                                         ></i>
                                                         Full Time</span
                                                     >
@@ -985,7 +856,7 @@
                                             <div class="card-header gap-4">
                                                 <div class="card-logo">
                                                     <img
-                                                        src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
+                                                        src="/assets/image/spotlight-section/logo/img_logo_chotot.png"
                                                         alt="Logo"
                                                     />
                                                 </div>
@@ -1000,7 +871,7 @@
                                                     </p>
                                                 </div>
                                                 <i
-                                                    class="icon icon-archive-tick fs-4 card-action"
+                                                    class="fa-solid fa-bookmark fs-4"
                                                 ></i>
                                             </div>
                                             <div
@@ -1012,13 +883,13 @@
                                                 >
                                                     <span
                                                         ><i
-                                                            class="icon icon-archive-tick fs-4"
+                                                            class="fa-solid fa-laptop-file fs-4"
                                                         ></i>
                                                         Remote</span
                                                     >
                                                     <span
                                                         ><i
-                                                            class="icon icon-archive-tick fs-4"
+                                                            class="fa-regular fa-clock fs-4"
                                                         ></i>
                                                         Full Time</span
                                                     >
@@ -1046,7 +917,7 @@
                                             <div class="card-header gap-4">
                                                 <div class="card-logo">
                                                     <img
-                                                        src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
+                                                        src="/assets/image/spotlight-section/logo/img_logo_chotot.png"
                                                         alt="Logo"
                                                     />
                                                 </div>
@@ -1061,7 +932,7 @@
                                                     </p>
                                                 </div>
                                                 <i
-                                                    class="icon icon-archive-tick fs-4 card-action"
+                                                    class="fa-solid fa-bookmark fs-4"
                                                 ></i>
                                             </div>
                                             <div
@@ -1073,13 +944,13 @@
                                                 >
                                                     <span
                                                         ><i
-                                                            class="icon icon-archive-tick fs-4"
+                                                            class="fa-solid fa-laptop-file fs-4"
                                                         ></i>
                                                         Remote</span
                                                     >
                                                     <span
                                                         ><i
-                                                            class="icon icon-archive-tick fs-4"
+                                                            class="fa-regular fa-clock fs-4"
                                                         ></i>
                                                         Full Time</span
                                                     >
@@ -1107,7 +978,7 @@
                                             <div class="card-header gap-4">
                                                 <div class="card-logo">
                                                     <img
-                                                        src="/assets/image/spotlight-section/logo/img_logo_ivc.png"
+                                                        src="/assets/image/spotlight-section/logo/img_logo_chotot.png"
                                                         alt="Logo"
                                                     />
                                                 </div>
@@ -1122,7 +993,7 @@
                                                     </p>
                                                 </div>
                                                 <i
-                                                    class="icon icon-archive-tick fs-4 card-action"
+                                                    class="fa-solid fa-bookmark fs-4"
                                                 ></i>
                                             </div>
                                             <div
@@ -1134,13 +1005,13 @@
                                                 >
                                                     <span
                                                         ><i
-                                                            class="icon icon-archive-tick fs-4"
+                                                            class="fa-solid fa-laptop-file fs-4"
                                                         ></i>
                                                         Remote</span
                                                     >
                                                     <span
                                                         ><i
-                                                            class="icon icon-archive-tick fs-4"
+                                                            class="fa-regular fa-clock fs-4"
                                                         ></i>
                                                         Full Time</span
                                                     >

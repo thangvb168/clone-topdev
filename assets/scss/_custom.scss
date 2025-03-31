@@ -94,6 +94,7 @@
 
 #hero-section {
     .img_banner {
+        width: 100%;
         max-width: 295px;
     }
 
@@ -140,5 +141,38 @@ footer {
 
     @include media-breakpoint-up(lg) {
         display: block;
+    }
+}
+
+.btn span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 100;
+}
+
+.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// OwlCarousel
+.owl-carousel {
+    .owl-dots {
+        text-align: center;
+        .owl-dot {
+            margin: 0 0.5rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: $black;
+            border-radius: 50%;
+            opacity: 0.5;
+
+            &.active {
+                opacity: 1;
+            }
+        }
     }
 }
