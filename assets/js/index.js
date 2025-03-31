@@ -113,3 +113,15 @@ owlCarouselTabs.owlCarousel({
     nav: false,
     dots: false,
 });
+
+const bottomMenu = document.querySelector('.js-bottom-menu');
+const menuItems = bottomMenu.querySelectorAll('.js-menu-item');
+menuItems.forEach((item) => {
+    item.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        menuItems.forEach((i) => i.classList.remove('active'));
+
+        this.classList.add('active');
+    });
+});

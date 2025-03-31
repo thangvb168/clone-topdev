@@ -11472,6 +11472,11 @@ footer {
 
 .bottom-menu {
   height: 80px;
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1020;
 }
 .bottom-menu .menu-item {
   display: flex;

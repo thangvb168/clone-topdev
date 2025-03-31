@@ -180,6 +180,11 @@ footer {
 // Bottom Menu
 .bottom-menu {
     height: 80px;
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: $zindex-sticky;
     .menu-item {
         display: flex;
         flex-direction: column;
