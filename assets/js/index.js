@@ -101,7 +101,6 @@ owlCarouselHeroFeatures.owlCarousel({
         },
         992: {
             loop: false,
-            center: true,
         },
     },
 });

@@ -175,6 +175,12 @@ footer {
             }
         }
     }
+
+    .owl-stage-outer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 // Bottom Menu
