@@ -33,6 +33,7 @@
     max-width: 20rem;
     --#{$prefix}card-padding-x: 1rem;
     --#{$prefix}card-padding-y: 1rem;
+    margin: 0 auto 0.5rem;
     padding: var(--#{$prefix}card-padding-y) var(--#{$prefix}card-padding-x);
 }
 // End Job Card
@@ -40,6 +41,19 @@
 // Blog Card
 .card-blog {
     max-width: 100%;
+    width: 100%;
+    position: relative;
+
+    .card-badge {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background-color: $neutral-4;
+        padding: 0.5rem 1rem;
+        border-radius: $border-radius-xxl;
+        opacity: 0.7;
+        z-index: 1;
+    }
 
     .card-img-top {
         --#{$prefix}img-max-height: 240px;

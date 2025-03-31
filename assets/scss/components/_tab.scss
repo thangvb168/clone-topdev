@@ -11,21 +11,28 @@
     display: flex;
     flex-direction: var(--#{$prefix}tabs-direction);
 
-    @include media-breakpoint-up(lg) {
-        & {
-            --#{$prefix}tabs-direction: column;
-            --#{$prefix}tabs-nav-direction: row;
-            --#{$prefix}tabs-nav-button-width: auto;
-        }
+    &.tabs-nav-align-start {
+        --#{$prefix}tabs-nav-align: center;
+        --#{$prefix}tabs-nav-justify: flex-start;
 
+        .tabs-nav {
+            overflow: auto;
+            scroll-behavior: smooth;
+        }
+    }
+
+    & {
+        --#{$prefix}tabs-direction: column;
+        --#{$prefix}tabs-nav-direction: row;
+        --#{$prefix}tabs-nav-button-width: auto;
+    }
+
+    @include media-breakpoint-up(lg) {
         &.tabs-nav-align-center {
             --#{$prefix}tabs-nav-align: center;
             --#{$prefix}tabs-nav-justify: center;
         }
-        &.tabs-nav-align-start {
-            --#{$prefix}tabs-nav-align: center;
-            --#{$prefix}tabs-nav-justify: flex-start;
-        }
+
         &.tabs-nav-vertical {
             --#{$prefix}tabs-direction: row;
             --#{$prefix}tabs-nav-direction: column;

@@ -1,32 +1,30 @@
 $icon-font: 'icon';
-$icon-lib-name: 'icomoon';
+$icon-lib-name: 'iconsax';
 $icon-font-dir: '/assets/scss/icons/fonts';
 $icon-font-file: '#{$icon-font-dir}/#{$icon-lib-name}';
 
-$icon-font-src: url('#{$icon-font-file}.woff') format('woff');
+$icon-font-src: url('#{$icon-font-file}.woff') format('woff2');
 
 @font-face {
-    font-family: $icon-font;
-    src: $icon-font-src;
+    font-family: 'icon';
+    src: url('/assets/scss/icons/fonts/iconsax.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
 }
 
 .icon::before {
-    display: inline-block;
     font-family: $icon-font !important;
     font-style: normal;
     font-weight: normal;
+    font-variant: normal;
     text-transform: none;
     line-height: 1;
-    vertical-align: -0.125em;
-    background: transparent;
-    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 $icons-map: (
-    'archive-tick': '\e900',
+    'archive-tick': '\e91f',
 );
 
 @each $icon, $code in $icons-map {
