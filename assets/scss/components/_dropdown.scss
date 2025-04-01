@@ -47,12 +47,6 @@
         // }
     }
 
-    &:hover .dropdown-menu {
-        visibility: visible;
-        transform: translateY(0);
-        opacity: 1;
-    }
-
     .dropdown-menu {
         display: block;
         visibility: hidden;
@@ -70,6 +64,12 @@
         background-color: var(--#{$prefix}dropdown-bg);
         color: var(--#{$prefix}dropdown-color);
         border-radius: var(--#{$prefix}dropdown-border-radius);
+
+        &.open {
+            visibility: visible;
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     .dropdown-item {

@@ -1,7 +1,16 @@
 import Tab from './src/tab.js';
+import Dropdown from './src/dropdown.js';
 
 Tab({
     tabsClass: 'js-tabs-job',
+}).init();
+
+Dropdown({
+    dropdownClass: 'js-dropdown-profile',
+}).init();
+
+Dropdown({
+    dropdownClass: 'js-dropdown-position',
 }).init();
 
 $('.js-owl-carousel-hero').owlCarousel({
@@ -87,6 +96,7 @@ $('.js-owl-carousel-tabs').owlCarousel({
     dots: false,
 });
 
+// Bottom Menu
 const bottomMenu = document.querySelector('.js-bottom-menu');
 const menuItems = bottomMenu.querySelectorAll('.js-menu-item');
 menuItems.forEach((item) => {
