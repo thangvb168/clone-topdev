@@ -11457,12 +11457,14 @@ p {
 }
 #header-section .notification .notification-count {
   position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
+  top: -0.25rem;
+  right: -0.45rem;
   background-color: #e24c32;
   color: #ffffff;
   border-radius: 50%;
-  padding: 0.1rem 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
   font-size: 0.75rem;
 }
 
