@@ -177,6 +177,16 @@ footer {
     }
 
     @include media-breakpoint-up(lg) {
+        // .owl-stage-outer {
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        // }
+    }
+}
+
+.owl-carousel-hero-features {
+    @include media-breakpoint-up(lg) {
         .owl-stage-outer {
             display: flex;
             align-items: center;

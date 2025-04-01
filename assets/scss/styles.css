@@ -11470,7 +11470,7 @@ footer {
   opacity: 1;
 }
 @media (min-width: 992px) {
-  .owl-carousel .owl-stage-outer {
+  .owl-carousel-hero-features .owl-stage-outer {
     display: flex;
     align-items: center;
     justify-content: center;
