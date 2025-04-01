@@ -1,3 +1,15 @@
+// Reset Owl Carousel
+.owl-carousel {
+    .owl-dots {
+        z-index: 1;
+    }
+
+    .owl-nav {
+        z-index: 2;
+    }
+}
+// End Reset Owl Carousel
+
 // Custom Owl Carousel
 .owl-carousel {
     &.owl-carousel-with-side-nav {
@@ -43,7 +55,7 @@
         }
 
         .owl-nav {
-            gap: 48px;
+            justify-content: space-between;
 
             .owl-prev,
             .owl-next {
@@ -76,7 +88,7 @@
         }
 
         .owl-dots {
-            padding: 0 calc(2rem + 4px);
+            // padding: 0 calc(2rem + 4px);
             display: flex;
             gap: 0.25rem;
 

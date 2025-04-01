@@ -96,14 +96,14 @@
 
 #hero-section {
     .img_banner {
-        width: 100%;
-        max-width: 295px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     @include media-breakpoint-up(md) {
         .img_banner {
-            max-width: 100%;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 596px;
         }
     }
 }

@@ -108,3 +108,22 @@ menuItems.forEach((item) => {
         this.classList.add('active');
     });
 });
+
+const changePositionOwlCarouselNavDots = function () {
+    const owlCarouselWithDotsNav = document.querySelectorAll(
+        '.js-owl-carousel-with-dots-nav'
+    );
+    owlCarouselWithDotsNav.forEach((owlCarousel) => {
+        let widthNavButton = 32;
+        let padding = 4;
+        let owlDots = owlCarousel.querySelector('.owl-dots');
+        let owlNav = owlCarousel.querySelector('.owl-nav');
+        let owlDotsLength = owlDots.getBoundingClientRect().width;
+        owlNav.style.width =
+            owlDotsLength + widthNavButton * 2 + padding * 2 + 'px';
+        owlDots.style.marginLeft = widthNavButton + padding + 'px';
+    });
+};
+
+const observer = new MutationObserver(changePositionOwlCarouselNavDots);
+observer.observe(document.body, { childList: true, subtree: true });

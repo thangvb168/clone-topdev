@@ -1030,6 +1030,13 @@ p {
   color: #383e46;
 }
 
+.owl-carousel .owl-dots {
+  z-index: 1;
+}
+.owl-carousel .owl-nav {
+  z-index: 2;
+}
+
 .owl-carousel.owl-carousel-with-side-nav .owl-nav {
   position: absolute;
   top: 50%;
@@ -1067,7 +1074,7 @@ p {
   height: 2rem;
 }
 .owl-carousel.owl-carousel-with-dots-nav .owl-nav {
-  gap: 48px;
+  justify-content: space-between;
 }
 .owl-carousel.owl-carousel-with-dots-nav .owl-nav .owl-prev,
 .owl-carousel.owl-carousel-with-dots-nav .owl-nav .owl-next {
@@ -1098,7 +1105,6 @@ p {
   color: #d34127;
 }
 .owl-carousel.owl-carousel-with-dots-nav .owl-dots {
-  padding: 0 calc(2rem + 4px);
   display: flex;
   gap: 0.25rem;
 }
@@ -11469,13 +11475,13 @@ p {
 }
 
 #hero-section .img_banner {
-  width: 100%;
-  max-width: 295px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 @media (min-width: 768px) {
   #hero-section .img_banner {
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 596px;
   }
 }
 
