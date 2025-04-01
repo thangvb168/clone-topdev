@@ -158,33 +158,6 @@ footer {
     text-overflow: ellipsis;
 }
 
-// OwlCarousel
-.owl-carousel {
-    .owl-dots {
-        text-align: center;
-        .owl-dot {
-            margin: 0 0.5rem;
-            width: 0.5rem;
-            height: 0.5rem;
-            background-color: $black;
-            border-radius: 50%;
-            opacity: 0.5;
-
-            &.active {
-                opacity: 1;
-            }
-        }
-    }
-
-    @include media-breakpoint-up(lg) {
-        // .owl-stage-outer {
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: center;
-        // }
-    }
-}
-
 .owl-carousel-hero-features {
     @include media-breakpoint-up(lg) {
         .owl-stage-outer {
@@ -195,7 +168,6 @@ footer {
     }
 }
 
-// Bottom Menu
 .bottom-menu {
     height: 80px;
     position: sticky;

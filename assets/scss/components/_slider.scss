@@ -1,33 +1,109 @@
-.slider {
-    position: relative;
-    display: flex;
-    align-items: center;
+// Custom Owl Carousel
+.owl-carousel {
+    &.owl-carousel-with-side-nav {
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
 
-    %button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 100;
-        background-color: $neutral-6;
-        border: none;
-        cursor: pointer;
-        font-size: 1.5rem;
-        height: 48px;
-        width: 48px;
-        border-radius: 50%;
-        color: white;
+            .owl-prev,
+            .owl-next {
+                width: 48px;
+                height: 48px;
+                background-color: $neutral-6;
+                opacity: 0.8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 1.5rem;
+                line-height: 1;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
     }
 
-    #customPrev {
-        @extend %button;
-        left: 1rem;
-    }
+    &.owl-carousel-with-dots-nav {
+        .owl-nav,
+        .owl-dots {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 100%;
+            margin: 0;
+            height: 2rem;
+        }
 
-    #customNext {
-        @extend %button;
-        right: 1rem;
-    }
+        .owl-nav {
+            gap: 48px;
 
-    .dots {
+            .owl-prev,
+            .owl-next {
+                width: 2rem;
+                height: 2rem;
+                margin: 0;
+                background-color: transparent;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $black;
+                border: 1px solid $black;
+                font-size: 1.5rem;
+                line-height: 1;
+                font-weight: bold;
+                transition: all 0.3s ease-in-out;
+
+                &.disabled {
+                    border-color: $primary-0;
+                    color: $primary-0;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                    border-color: $primary;
+                    color: $primary;
+                }
+            }
+        }
+
+        .owl-dots {
+            padding: 0 calc(2rem + 4px);
+            display: flex;
+            gap: 0.25rem;
+
+            .owl-dot {
+                span {
+                    margin: 0;
+                    height: 0.5rem;
+                    width: 0.5rem;
+                    border-radius: 50%;
+                    background-color: $primary-0;
+                    transition: all 0.3s ease-in-out;
+                }
+                &.active {
+                    span {
+                        border-radius: 1rem;
+                        width: 1rem;
+                        background-color: $primary;
+                    }
+                }
+
+                &:hover {
+                    span {
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
     }
 }
+// End Custom Owl Carousel

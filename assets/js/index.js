@@ -1,32 +1,17 @@
 import Tab from './src/tab.js';
 
-const tab1 = Tab({
+Tab({
     tabsClass: 'js-tabs-job',
 }).init();
 
-// const tab2 = Tab({
-//     tabsClass: 'js-tabs-vertical',
-// }).init();
-
-// var owl = $('.owl-carousel');
-// owl.owlCarousel({
-//     loop: true,
-//     margin: 32,
-//     // stagePadding: 200,
-//     nav: false,
-//     autoWidth: true,
-//     // dots: true,
-//     // items: 5,
-// });
-$('.owl-carousel-hero').owlCarousel({
-    loop: true,
+$('.js-owl-carousel-hero').owlCarousel({
     margin: 10,
     items: 2,
     nav: false,
     dots: false,
 });
 
-$('.owl-carousel-brand').owlCarousel({
+$('.js-owl-carousel-brand').owlCarousel({
     loop: true,
     margin: 32,
     autoWidth: true,
@@ -34,7 +19,7 @@ $('.owl-carousel-brand').owlCarousel({
     dots: false,
 });
 
-$('.owl-carousel-card-job-dots').owlCarousel({
+$('.js-owl-carousel-card-job-dots').owlCarousel({
     loop: true,
     margin: 32,
     autoWidth: true,
@@ -43,7 +28,7 @@ $('.owl-carousel-card-job-dots').owlCarousel({
     dots: true,
 });
 
-$('.owl-carousel-featured-companies').owlCarousel({
+$('.js-owl-carousel-featured-companies').owlCarousel({
     loop: true,
     margin: 32,
     autoWidth: true,
@@ -51,22 +36,21 @@ $('.owl-carousel-featured-companies').owlCarousel({
     dots: false,
 });
 
-const owlCarouselHotJob = $('.owl-carousel-hot-job');
-owlCarouselHotJob.owlCarousel({
+$('.js-owl-carousel-hot-job').owlCarousel({
     loop: true,
     margin: 32,
     autoWidth: true,
     center: true,
-    nav: false,
+    items: 1,
     dots: false,
+    nav: true,
 });
 
-const owlCarouselBlog = $('.owl-carousel-blog');
-owlCarouselBlog.owlCarousel({
-    loop: true,
+$('.js-owl-carousel-blog').owlCarousel({
     margin: 16,
     nav: true,
     dots: true,
+
     responsive: {
         0: {
             items: 1,
@@ -80,16 +64,7 @@ owlCarouselBlog.owlCarousel({
     },
 });
 
-$('#customPrev').click(function () {
-    owlCarouselHotJob.trigger('prev.owl.carousel');
-});
-
-$('#customNext').click(function () {
-    owlCarouselHotJob.trigger('next.owl.carousel');
-});
-
-const owlCarouselHeroFeatures = $('.owl-carousel-hero-features');
-owlCarouselHeroFeatures.owlCarousel({
+$('.js-owl-carousel-hero-features').owlCarousel({
     margin: 12,
     autoWidth: true,
     nav: false,
@@ -105,8 +80,7 @@ owlCarouselHeroFeatures.owlCarousel({
     },
 });
 
-const owlCarouselTabs = $('.owl-carousel-tabs');
-owlCarouselTabs.owlCarousel({
+$('.js-owl-carousel-tabs').owlCarousel({
     margin: 8,
     autoWidth: true,
     nav: false,
