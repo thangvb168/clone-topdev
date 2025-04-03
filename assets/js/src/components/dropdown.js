@@ -2,6 +2,7 @@ const Dropdown = function ({
     dropdownClass = 'js-dropdown',
     dropdownToggleClass = 'js-dropdown-toggle',
     dropdownMenuClass = 'js-dropdown-menu',
+    dropdownItemClass = 'js-dropdown-item',
 }) {
     const dropdownElem = document.querySelector(`.${dropdownClass}`);
     if (!dropdownElem) return;
@@ -16,6 +17,7 @@ const Dropdown = function ({
     function init() {
         dropdownElem.addEventListener('click', _handleClickDropdownToggle);
         document.addEventListener('click', _handleClickOutside);
+
         return this;
     }
 

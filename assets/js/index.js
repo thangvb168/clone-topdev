@@ -1,5 +1,115 @@
-import Tab from './src/tab.js';
-import Dropdown from './src/dropdown.js';
+import Tab from './src/components/tab.js';
+import Dropdown from './src/components/dropdown.js';
+
+function createCardElem({
+    title = 'Card-Title',
+    description = 'Card-Description',
+    locationType = 'Remote',
+    type = 'Full-time',
+    salary = 1000,
+    thumbnail = '',
+}) {
+    const cardJob = document.createElement('div');
+    cardJob.classList.add('card', 'card-job');
+
+    // Card Header
+    const cardHeader = document.createElement('div');
+    cardHeader.classList.add('card-header', 'gap-4');
+
+    // Logo
+    const cardLogo = document.createElement('div');
+    cardLogo.classList.add('card-logo');
+    const imgLogo = document.createElement('img');
+    imgLogo.src = thumbnail;
+    imgLogo.alt = 'Logo';
+    cardLogo.appendChild(imgLogo);
+
+    // Title
+    const cardTitle = document.createElement('div');
+    cardTitle.classList.add('card-title');
+    const h2Title = document.createElement('h2');
+    h2Title.classList.add('display-2', 'card-title-content');
+    h2Title.textContent = title;
+
+    const pPrice = document.createElement('p');
+    pPrice.classList.add('text-primary', 'extra-small');
+    pPrice.textContent = `Up to ${Math.round(salary)}$`;
+
+    cardTitle.appendChild(h2Title);
+    cardTitle.appendChild(pPrice);
+
+    // Tạo icon bookmark
+    const bookmarkIcon = document.createElement('i');
+    bookmarkIcon.classList.add('fa-solid', 'fa-bookmark', 'fs-4');
+
+    cardHeader.appendChild(cardLogo);
+    cardHeader.appendChild(cardTitle);
+    cardHeader.appendChild(bookmarkIcon);
+
+    // Line
+    const divider = document.createElement('div');
+    divider.classList.add('line', 'line-dashed-x2', 'line-neutral-5', 'my-5');
+
+    // Body
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body', 'gap-2');
+
+    // Type job
+    const infoContainer = document.createElement('div');
+    infoContainer.classList.add('d-flex', 'gap-4', 'text-neutral-7');
+
+    const remoteSpan = document.createElement('span');
+    remoteSpan.innerHTML =
+        '<i class="fa-solid fa-laptop-file fs-4"></i> ' + locationType;
+
+    const fullTimeSpan = document.createElement('span');
+    fullTimeSpan.innerHTML = '<i class="fa-regular fa-clock fs-4"></i> ' + type;
+
+    infoContainer.appendChild(remoteSpan);
+    infoContainer.appendChild(fullTimeSpan);
+
+    // Description job
+    const jobDescription = document.createElement('p');
+    jobDescription.classList.add('card-body-description');
+    jobDescription.textContent = description;
+
+    cardBody.appendChild(infoContainer);
+    cardBody.appendChild(jobDescription);
+
+    cardJob.appendChild(cardHeader);
+    cardJob.appendChild(divider);
+    cardJob.appendChild(cardBody);
+
+    return cardJob;
+}
+
+// Call API
+import BaseAPI from './src/api/index.js';
+import { MOCKAPI_ENDPOINT_PREFIX } from './src/config/env.js';
+
+const instance = new BaseAPI({
+    baseURL: MOCKAPI_ENDPOINT_PREFIX,
+    isUseFilter: true,
+});
+
+await instance.request({ url: '/jobs' }).then((data) => {
+    const owlCarouselHotJob = document.querySelector(
+        '.js-owl-carousel-hot-job'
+    );
+
+    for (let i = 0; i < 10; i++) {
+        const cardJob = createCardElem({
+            title: data[i].title,
+            description: data[i].description,
+            locationType: data[i].locationType,
+            type: data[i].type,
+            salary: data[i].salary,
+            thumbnail: data[i].thumbnail,
+        });
+
+        owlCarouselHotJob.appendChild(cardJob);
+    }
+});
 
 Tab({
     tabsClass: 'js-tabs-job',

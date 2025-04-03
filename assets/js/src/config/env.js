@@ -1,0 +1,5 @@
+const MOCKAPI_TOKEN = '67ee152e4387d9117bbf4f07';
+const MOCKAPI_PREFIX = 'api/v1/';
+const MOCKAPI_ENDPOINT_PREFIX = `https://${MOCKAPI_TOKEN}.mockapi.io/${MOCKAPI_PREFIX}`;
+
+export { MOCKAPI_ENDPOINT_PREFIX };
