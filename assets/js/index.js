@@ -1,14 +1,167 @@
-import Tab from './src/components/tab.js';
 import Dropdown from './src/components/dropdown.js';
 
-import './skeleton.js';
+import {
+    createCardElem,
+    createSkeletonCard,
+    createBlogElem,
+    createSkeletonBlogElem,
+    createOptionElem,
+} from './createElem.js';
 
-function createOptionElem({ title = 'Option-Title', value = 'Option-Value' }) {
-    const option = document.createElement('option');
-    option.value = value;
-    option.textContent = title;
-    return option;
+// Call API
+import BaseAPI from './src/api/index.js';
+import { MOCKAPI_ENDPOINT_PREFIX } from './src/config/env.js';
+
+const instance = new BaseAPI({
+    baseURL: MOCKAPI_ENDPOINT_PREFIX,
+    isUseFilter: true,
+});
+
+function loadSkeletonJobs(elem, count, className) {
+    elem.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+        let skeletonCard = createSkeletonCard();
+        skeletonCard.classList.add(className);
+        elem.appendChild(skeletonCard);
+    }
 }
+
+function loadJobs(elem, jobList, className) {
+    elem.innerHTML = '';
+    for (let i = 0; i < jobList.length; i++) {
+        let cardJob = createCardElem(jobList[i]);
+        cardJob.classList.add(className);
+        elem.appendChild(cardJob);
+    }
+}
+
+function loadBlogs(elem, blogList) {
+    elem.innerHTML = '';
+    for (let i = 0; i < blogList.length; i++) {
+        let blogElem = createBlogElem(blogList[i]);
+        elem.appendChild(blogElem);
+    }
+}
+
+function loadSkeletonBlogs(elem, count) {
+    elem.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+        let skeletonBlog = createSkeletonBlogElem();
+        elem.appendChild(skeletonBlog);
+    }
+}
+
+window.getJobs = async function (location, btnElem) {
+    if (!location) location = 'all';
+
+    const featuredJobList = document.querySelector('#featured-job-list');
+    loadSkeletonJobs(featuredJobList, 8, 'col');
+
+    let url = 'jobs';
+    if (location !== 'all') {
+        url += `?location.slug=${location}`;
+    }
+    const response = await instance.get({ url });
+    if (!response) {
+        console.error('Failed to load jobs');
+        return;
+    }
+    let data = response;
+
+    const buttonNavs = document.querySelector('#featured-job-list-navs');
+    const activeButton = buttonNavs.querySelector('button.active');
+    if (activeButton) {
+        activeButton.classList.remove('active');
+    }
+
+    if (!btnElem) {
+        btnElem = buttonNavs.querySelectorAll('button')[0];
+    }
+
+    btnElem.classList.add('active');
+
+    loadJobs(featuredJobList, data, 'col');
+};
+
+async function getHotJobs() {
+    const owlCarouselHotJob = document.querySelector(
+        '.js-owl-carousel-hot-job'
+    );
+
+    loadSkeletonJobs(owlCarouselHotJob, 4);
+    $('.js-owl-carousel-hot-job').owlCarousel({
+        loop: true,
+        margin: 32,
+        autoWidth: true,
+        center: true,
+        items: 1,
+        dots: false,
+        nav: true,
+    });
+
+    const response = await instance.get({ url: '/jobs' });
+    $('.js-owl-carousel-hot-job').owlCarousel('destroy');
+    loadJobs(owlCarouselHotJob, response);
+    $('.js-owl-carousel-hot-job').owlCarousel({
+        loop: true,
+        margin: 32,
+        autoWidth: true,
+        center: true,
+        items: 1,
+        dots: false,
+        nav: true,
+    });
+}
+
+async function getBlogs() {
+    const owlCarouselBlog = document.querySelector('.js-owl-carousel-blog');
+
+    loadSkeletonBlogs(owlCarouselBlog, 4);
+    $('.js-owl-carousel-blog').owlCarousel('destroy');
+    $('.js-owl-carousel-blog').owlCarousel({
+        margin: 16,
+        nav: true,
+        dots: true,
+
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 2,
+            },
+            1000: {
+                items: 3,
+            },
+        },
+    });
+
+    const response = await instance.get({ url: '/blogs' });
+    loadBlogs(owlCarouselBlog, response);
+    $('.js-owl-carousel-blog').owlCarousel('destroy');
+
+    $('.js-owl-carousel-blog').owlCarousel({
+        margin: 16,
+        nav: true,
+        dots: true,
+
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 2,
+            },
+            1000: {
+                items: 3,
+            },
+        },
+    });
+}
+
+getHotJobs();
+window.getJobs('all');
+getBlogs();
 
 const location = [
     {
@@ -34,17 +187,9 @@ for (let i = 0; i < location.length; i++) {
     selectLocationElem.appendChild(option);
 }
 
-// Tab({
-//     tabsClass: 'js-tabs-job',
-// }).init();
-
 Dropdown({
     dropdownClass: 'js-dropdown-profile',
 }).init();
-
-// Dropdown({
-//     dropdownClass: 'js-dropdown-position',
-// }).init();
 
 $('.js-owl-carousel-hero').owlCarousel({
     margin: 10,

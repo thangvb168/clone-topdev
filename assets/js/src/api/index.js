@@ -85,12 +85,15 @@ BaseAPI.prototype.request = async function ({
 
 BaseAPI.prototype.get = async function ({ url = '', baseURL, headers = {} }) {
     if (this.getIsUseFilter()) {
+        console.log('Using filter by query');
+        let rawURL = url.split('?')[0];
         const data = await this.request({
-            url,
+            url: rawURL,
             method: 'GET',
             baseURL,
             headers,
         });
+
         return filterByQuery({ data, url });
     }
 
@@ -157,16 +160,32 @@ function filterByQuery({ data = [], url = '' }) {
     let queryArr = queries[0].split('&');
 
     for (let query of queryArr) {
-        const [key, value] = query.split('=')?.map((element) => {
-            return element.trim();
-        });
+        const [key, value] = query.split('=').map((element) => element.trim());
 
-        if (Object.keys(data[0]).includes(key)) {
-            data = data.filter(function (item) {
-                return item[key] == value;
+        if (!key || !value) continue;
+
+        if (key.includes('.')) {
+            const keys = key.split('.');
+
+            data = data.filter((item) => {
+                let nestedValue = item;
+                for (const k of keys) {
+                    if (nestedValue[k] === undefined) return false;
+                    nestedValue = nestedValue[k];
+                }
+                return nestedValue == value;
             });
+        } else {
+            if (
+                data.length > 0 &&
+                Object.prototype.hasOwnProperty.call(data[0], key)
+            ) {
+                data = data.filter((item) => item[key] == value);
+            }
         }
     }
+
+    return data;
 }
 
 export default BaseAPI;
