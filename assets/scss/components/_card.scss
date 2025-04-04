@@ -30,7 +30,8 @@
 
 // Job Card
 .card-job {
-    max-width: 20rem;
+    // max-width: 20rem;
+    width: 20rem;
     --#{$prefix}card-padding-x: 1rem;
     --#{$prefix}card-padding-y: 1rem;
     margin: 0 auto 0.5rem;

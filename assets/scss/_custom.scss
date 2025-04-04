@@ -192,3 +192,15 @@ footer {
         }
     }
 }
+
+// Font awesome
+.font-awesome {
+    font-family: 'FontAwesome', 'sans-serif';
+}
+
+// Button Custom
+.btn.active {
+    background-color: $primary-0;
+    color: $white;
+    border: 1px solid $primary-0;
+}
