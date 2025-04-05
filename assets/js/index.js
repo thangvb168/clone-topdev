@@ -187,10 +187,6 @@ for (let i = 0; i < location.length; i++) {
     selectLocationElem.appendChild(option);
 }
 
-Dropdown({
-    dropdownClass: 'js-dropdown-profile',
-}).init();
-
 $('.js-owl-carousel-hero').owlCarousel({
     margin: 10,
     items: 2,
@@ -277,3 +273,49 @@ const changePositionOwlCarouselNavDots = function () {
 
 const observer = new MutationObserver(changePositionOwlCarouselNavDots);
 observer.observe(document.body, { childList: true, subtree: true });
+
+// Check login
+window.handleLogin = function () {
+    window.location.href = '/pages/auth/login.html';
+};
+
+document.querySelector('.js-btn-logout').addEventListener('click', function () {
+    console.log('Logout');
+    localStorage.removeItem('user');
+    window.location.reload();
+});
+
+const profileElem = document.querySelector('.js-profile');
+const profileNameElem = profileElem.querySelector('.js-profile-name');
+const profileAvatarElem = profileElem.querySelector('.js-profile-avatar');
+const btnLogin = document.querySelector('.js-login-btn');
+
+function isLogin() {
+    const userData = localStorage.getItem('user');
+
+    let user = null;
+    try {
+        if (userData && userData !== 'undefined') {
+            user = JSON.parse(userData);
+        }
+    } catch (error) {
+        console.error('JSON parse error:', error);
+        localStorage.removeItem('user');
+    }
+
+    if (!user) {
+        btnLogin.classList.remove('d-none');
+        profileElem.classList.add('d-none');
+    } else {
+        profileNameElem.innerText = user.name;
+        profileAvatarElem.src = user.avatar;
+        btnLogin.classList.add('d-none');
+        profileElem.classList.remove('d-none');
+
+        Dropdown({
+            dropdownClass: 'js-dropdown-profile',
+        }).init();
+    }
+}
+
+isLogin();
