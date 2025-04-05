@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Search Results</title>
+        <!-- Lib Imports -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Owl Carousel Imports -->
+        <link
+            rel="stylesheet"
+            href="../assets/lib/owl-carousel-2/src/scss/owl.carousel.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../assets/lib/owl-carousel-2/src/scss/owl.theme.default.css"
+        />
+
+        <!-- CSS Imports -->
+        <link rel="stylesheet" href="../assets/scss/styles.css" />
+    </head>
+    <body>
+        <header id="header-section" class="position-sticky top-0 bg-white">
+            <div class="header-top">
+                <div
+                    class="container py-2 d-flex gap-16 justify-content-between align-items-center"
+                >
+                    <div class="nav-links">
+                        <a class="nav-link" href=""
+                            ><span class="botton-label">Việc Làm IT</span></a
+                        >
+                        <a class="nav-link" href=""
+                            ><span class="botton-label">Tạo CV</span></a
+                        >
+                        <a class="nav-link" href=""
+                            ><span class="botton-label">Công Ty ID</span></a
+                        >
+                        <a class="nav-link" href=""
+                            ><span class="botton-label"
+                                >Trắc Nghiệm Tính Cách</span
+                            ></a
+                        >
+                        <a class="nav-link" href=""
+                            ><span class="botton-label">Blog</span></a
+                        >
+                        <a class="nav-link" href=""
+                            ><span class="botton-label">Việc Làm IT</span
+                            ><span class="botton-label text-gradient">
+                                Fresher</span
+                            ></a
+                        >
+                    </div>
+                    <div class="header-infomation">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-phone fs-6"></i>
+                            <span class="body-2">028.6273.3496</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-user-tie fs-6"></i>
+                            <span class="body-2">Tuyển dụng</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-envelope fs-6"></i>
+                            <span class="body-2">Liên hệ</span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <img
+                            class="rounded-circle size-6"
+                            src="../assets/image/header/img_lang_en.png"
+                            alt="English"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div
+                    class="container py-4 d-flex align-items-center justify-content-between"
+                >
+                    <div
+                        class="sidebar-left d-flex flex-grow-1 align-items-center"
+                    >
+                        <a href="#">
+                            <img
+                                src="../assets/image/header/img_logo.png"
+                                alt="Logo"
+                            />
+                        </a>
+                    </div>
+                    <div class="sidebar-right flex-grow-1 flex-xxl-grow-0">
+                        <div
+                            class="d-flex flex-xxl-row-reverse align-items-center justify-content-between"
+                        >
+                            <div
+                                class="profile d-flex align-items-center justify-content-center js-profile"
+                            >
+                                <div
+                                    class="dropdown dropdown-left js-dropdown-profile px-2 py-1"
+                                >
+                                    <div
+                                        class="dropdown-toggle gap-4 js-dropdown-toggle"
+                                    >
+                                        <div class="rounded-full size-10">
+                                            <img
+                                                src=""
+                                                class="js-profile-avatar h-100"
+                                                alt="Avatar"
+                                            />
+                                        </div>
+                                        <div class="text-start">
+                                            <p
+                                                class="small-headline js-profile-name"
+                                            ></p>
+                                            <p class="botton-label">UI UX</p>
+                                        </div>
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                    <ul class="dropdown-menu js-dropdown-menu">
+                                        <li
+                                            class="dropdown-item js-dropdown-item"
+                                        >
+                                            <div class="nav-link js-btn-logout">
+                                                Logout
+                                            </div>
+                                        </li>
+                                        <li
+                                            class="dropdown-item js-dropdown-item"
+                                        >
+                                            <a href="#" class="nav-link"
+                                                >Option 2</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div
+                                onclick="handleLogin()"
+                                class="btn btn-outline-primary ms-4 js-login-btn"
+                            >
+                                Login
+                            </div>
+
+                            <div class="notification">
+                                <i class="fa-solid fa-bell fs-6"></i>
+                                <span class="notification-count">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="hero-section" class="mb-4">
+                <div
+                    class="container d-flex flex-column align-items-center gap-8 pt-16"
+                >
+                    <img
+                        class="img_banner"
+                        src="../assets/image/hero-section/img_banner.png"
+                        alt="Banner"
+                    />
+                    <div class="row justify-content-center gx-3 w-100">
+                        <div
+                            class="col-12 col-md-4 col-xxl-6 text-center mb-2 mb-md-0"
+                        >
+                            <div class="input bg-neutral-1 w-100">
+                                <input
+                                    type="text"
+                                    class="form-control body-1"
+                                    placeholder="Công việc bạn đang tìm kiếm là gì"
+                                    id="js-search-input"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-xxl-2 text-center">
+                            <div class="position-relative w-100">
+                                <i
+                                    class="fa-solid fa-location-dot position-absolute start-0 top-50 ps-2 translate-middle-y"
+                                ></i>
+                                <select
+                                    class="form-select px-6 py-3 bg-neutral-1 rounded-2 js-form-select-location"
+                                    id="js-select-location"
+                                >
+                                    <option selected value="all">Vị trí</option>
+                                    <option value="ha-noi">Hà Nội</option>
+                                    <option value="ho-chi-minh">
+                                        Hồ Chí Minh
+                                    </option>
+                                    <option value="da-nang">Đà Nẵng</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-xxl-2 text-center">
+                            <button
+                                class="btn btn-dark py-3 border-0 w-100 d-flex align-items-center gap-2 justify-content-center"
+                                id="js-btn-search"
+                            >
+                                <div
+                                    class="spinner-border size-4 d-none"
+                                    id="loading"
+                                ></div>
+                                <span class="botton-label text-nowrap"
+                                    >Tìm kiếm</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-center w-100">
+                        <div
+                            class="js-owl-carousel-hero-features owl-carousel-hero-features owl-carousel owl-theme d-flex justify-content-center"
+                        >
+                            <button class="btn btn-outline-gradient py-2 px-4">
+                                <span class="small-headline">New Job</span>
+                            </button>
+                            <button class="btn btn-outline-gradient py-2 px-4">
+                                <span class="small-headline">Part Time</span>
+                            </button>
+                            <button class="btn btn-outline-gradient py-2 px-4">
+                                <span class="small-headline">Full Time</span>
+                            </button>
+                            <button class="btn btn-outline-gradient py-2 px-4">
+                                <span class="small-headline"
+                                    >Work from Home</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h1 class="heading-1 mb-8 text-gradient">
+                        Kết quả tìm kiếm
+                    </h1>
+                    <div
+                        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
+                        id="js-job-result-list"
+                    ></div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="../assets/lib/owl-carousel-2/src/js/owl.carousel.js"></script>
+        <script src="../assets/lib/owl-carousel-2/src/js/owl.navigation.js"></script>
+        <script
+            type="module"
+            src="../assets/js/src/pages/search-result.js"
+        ></script>
+    </body>
+</html>

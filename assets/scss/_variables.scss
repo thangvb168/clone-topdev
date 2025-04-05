@@ -339,3 +339,15 @@ $input-focus-width: 0.25rem;
 $input-focus-box-shadow: 0 0 0.25rem rgba($black, 0.15),
     0 0 0.25rem rgba($primary, 0.5);
 // End Form Input
+
+// Spinner
+$spinner-width: 2rem;
+$spinner-height: $spinner-width;
+$spinner-vertical-align: -0.125em;
+$spinner-border-width: 0.1rem;
+$spinner-animation-speed: 0.75s;
+
+$spinner-width-sm: 1rem;
+$spinner-height-sm: $spinner-width-sm;
+$spinner-border-width-sm: 0.2em;
+// End Spinner

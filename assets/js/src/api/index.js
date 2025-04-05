@@ -164,6 +164,16 @@ function filterByQuery({ data = [], url = '' }) {
 
         if (!key || !value) continue;
 
+        if (key === 'search') {
+            data = data.filter((item) => {
+                return (
+                    item.title.toLowerCase().includes(value.toLowerCase()) ||
+                    item.description.toLowerCase().includes(value.toLowerCase())
+                );
+            });
+            continue;
+        }
+
         if (key.includes('.')) {
             const keys = key.split('.');
 

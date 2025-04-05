@@ -173,50 +173,33 @@
                                     type="text"
                                     class="form-control body-1"
                                     placeholder="Công việc bạn đang tìm kiếm là gì"
+                                    id="js-search-input"
                                 />
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-xxl-2 text-center">
-                            <!-- <div class="dropdown js-dropdown-position w-100">
-                                <button
-                                    class="dropdown-toggle btn btn-neutral-1 py-3 px-4 w-100 border-0 js-dropdown-toggle d-flex align-items-center justify-content-between"
-                                >
-                                    <div
-                                        class="d-flex align-items-center gap-2"
-                                    >
-                                        <i
-                                            class="fa-solid fa-location-dot fs-6 ms-sm-6"
-                                        ></i>
-                                        <span class="body-1">Vị trí</span>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </button>
-                                <ul class="dropdown-menu js-dropdown-menu">
-                                    <li class="dropdown-item js-dropdown-item">
-                                        <a href="#" class="nav-link"
-                                            >Option 1</a
-                                        >
-                                    </li>
-                                    <li class="dropdown-item js-dropdown-item">
-                                        <a href="#" class="nav-link"
-                                            >Option 2</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div> -->
                             <div class="position-relative w-100">
                                 <i
                                     class="fa-solid fa-location-dot position-absolute start-0 top-50 ps-2 translate-middle-y"
                                 ></i>
                                 <select
                                     class="form-select px-6 py-3 bg-neutral-1 rounded-2 js-form-select-location"
+                                    id="js-select-location"
                                 >
-                                    <option selected>Vị trí</option>
+                                    <option selected value="all">Vị trí</option>
+                                    <option value="ha-noi">Hà Nội</option>
+                                    <option value="ho-chi-minh">
+                                        Hồ Chí Minh
+                                    </option>
+                                    <option value="da-nang">Đà Nẵng</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 col-xxl-2 text-center">
-                            <button class="btn btn-dark py-3 border-0 w-100">
+                            <button
+                                class="btn btn-dark py-3 border-0 w-100"
+                                onclick="handleClickSearchBtn()"
+                            >
                                 <span class="botton-label text-nowrap"
                                     >Tìm kiếm</span
                                 >

@@ -5,7 +5,6 @@ import {
     createSkeletonCard,
     createBlogElem,
     createSkeletonBlogElem,
-    createOptionElem,
 } from './createElem.js';
 
 // Call API
@@ -178,15 +177,6 @@ const location = [
     },
 ];
 
-const selectLocationElem = document.querySelector(`.js-form-select-location`);
-for (let i = 0; i < location.length; i++) {
-    const option = createOptionElem({
-        title: location[i].title,
-        value: location[i].value,
-    });
-    selectLocationElem.appendChild(option);
-}
-
 $('.js-owl-carousel-hero').owlCarousel({
     margin: 10,
     items: 2,
@@ -319,3 +309,26 @@ function isLogin() {
 }
 
 isLogin();
+
+window.handleClickSearchBtn = function () {
+    const searchInput = document.querySelector('#js-search-input');
+    const searchValue = searchInput?.value?.trim();
+
+    const selectLocation = document.querySelector('#js-select-location');
+    const selectLocationValue = selectLocation?.value?.trim();
+
+    if (!searchValue && !selectLocationValue) {
+        alert('Please enter a keyword or select a location to search!');
+        return;
+    }
+
+    let url = '/pages/search-result.html?';
+    if (searchValue) {
+        url += `search=${searchValue}`;
+    }
+    if (selectLocationValue && selectLocationValue !== 'all') {
+        url += `&location=${selectLocationValue}`;
+    }
+
+    window.location.href = url;
+};
