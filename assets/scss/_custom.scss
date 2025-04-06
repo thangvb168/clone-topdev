@@ -204,3 +204,9 @@ footer {
     color: $white;
     border: 1px solid $primary-0;
 }
+
+.modal-open {
+    overflow: hidden;
+    // Prevent scrolling on the body when modal is open
+    padding-right: 15px;
+}

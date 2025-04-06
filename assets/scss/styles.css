@@ -1360,6 +1360,7 @@ p {
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+  background-color: rgba(34, 38, 49, 0.5);
 }
 
 .modal-dialog {
@@ -11909,4 +11910,9 @@ footer {
   background-color: #e24c32;
   color: #ffffff;
   border: 1px solid #e24c32;
+}
+
+.modal-open {
+  overflow: hidden;
+  padding-right: 15px;
 }/*# sourceMappingURL=styles.css.map */

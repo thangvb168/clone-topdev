@@ -52,7 +52,7 @@ class Modal extends BaseComponent {
 
         this._dialog = SelectorEngine.findOne(SELECTOR_DIALOG, this._element);
         this._isShown = false;
-        this._isTransitioning = false;
+        // this._isTransitioning = false;
 
         this._addEventListeners();
     }
@@ -74,7 +74,8 @@ class Modal extends BaseComponent {
     }
 
     show(relatedTarget) {
-        if (this._isShown || this._isTransitioning) return;
+        // if (this._isShown || this._isTransitioning) return;
+        if (this._isShown) return;
 
         const showEvent = EventHandler.trigger(this._element, EVENT_SHOW, {
             relatedTarget,
@@ -91,18 +92,15 @@ class Modal extends BaseComponent {
     }
 
     hide() {
-        if (!this._isShown || this._isTransitioning) {
-            console.log('_isShown', this._isShown);
-            console.log('_isTransitioning', this._isTransitioning);
-            return;
-        }
+        // if (!this._isShown || this._isTransitioning) return;
+        if (!this._isShown) return;
 
         const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE);
 
         if (hideEvent.defaultPrevented) return;
 
         this._isShown = false;
-        this._isTransitioning = true;
+        // this._isTransitioning = true;
 
         document.body.classList.remove(CLASS_NAME_OPEN);
 
@@ -127,12 +125,29 @@ class Modal extends BaseComponent {
         }
 
         this._element.classList.add(CLASS_NAME_SHOW);
+
+        const transitionComplete = () => {
+            if (this._config.focus) {
+                this._focustrap.activate();
+            }
+
+            // this._isTransitioning = false;
+            EventHandler.trigger(this._element, EVENT_SHOWN, {
+                relatedTarget,
+            });
+        };
+
+        this._queueCallback(
+            transitionComplete,
+            this._dialog,
+            this._isAnimated()
+        );
     }
 
     _hideElement() {
         this._element.style.display = 'none';
         this._element.classList.remove(CLASS_NAME_SHOW);
-        this._isTransitioning = false;
+        // this._isTransitioning = false;
 
         EventHandler.trigger(this._element, EVENT_HIDDEN);
     }
@@ -145,7 +160,31 @@ class Modal extends BaseComponent {
     }
 
     _addEventListeners() {
-        console.log('Add event listeners');
+        EventHandler.on(this._element, EVENT_MOUSEDOWN_DISMISS, (event) => {
+            EventHandler.one(this._element, EVENT_CLICK_DISMISS, (event2) => {
+                if (
+                    this._element !== event.target ||
+                    this._element !== event2.target
+                ) {
+                    return;
+                }
+
+                if (this._config.backdrop === 'static') {
+                    this._triggerBackdropTransition();
+                    return;
+                }
+
+                if (this._config.backdrop) {
+                    this.hide();
+                }
+            });
+        });
+    }
+
+    _hideModal() {
+        this._isTransitioning = false;
+        document.body.classList.remove(CLASS_NAME_OPEN);
+        EventHandler.trigger(this._element, EVENT_HIDDEN);
     }
 }
 
