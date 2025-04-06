@@ -406,6 +406,7 @@ $utilities: (
     'width':
         (
             property: width,
+            responsive: true,
             class: w,
             values: (
                 25: 25%,
