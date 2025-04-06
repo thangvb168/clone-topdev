@@ -197,9 +197,13 @@
                         </div>
                         <div class="col-6 col-md-3 col-xxl-2 text-center">
                             <button
-                                class="btn btn-dark py-3 border-0 w-100"
-                                onclick="handleClickSearchBtn()"
+                                class="btn btn-dark py-3 border-0 w-100 d-flex align-items-center gap-2 justify-content-center"
+                                id="js-btn-search"
                             >
+                                <div
+                                    class="spinner-border size-4 d-none"
+                                    id="loading"
+                                ></div>
                                 <span class="botton-label text-nowrap"
                                     >Tìm kiếm</span
                                 >
@@ -226,6 +230,15 @@
                             </button>
                         </div>
                     </div>
+                </div>
+                <div id="js-search-result" class="container d-none">
+                    <h1 class="heading-1 mb-8 text-gradient">
+                        Kết quả tìm kiếm
+                    </h1>
+                    <div
+                        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
+                        id="js-job-result-list"
+                    ></div>
                 </div>
             </section>
             <section id="super-spotlight-companies-section" class="mb-16">

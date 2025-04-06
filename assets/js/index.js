@@ -332,3 +332,60 @@ window.handleClickSearchBtn = function () {
 
     window.location.href = url;
 };
+
+function debounce(fn, delay) {
+    let timeoutId;
+    return function (...args) {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(() => {
+            fn.apply(this, args);
+        }, delay);
+    };
+}
+const searchResultElem = document.querySelector('#js-search-result');
+const resultListElem = document.querySelector('#js-job-result-list');
+const selectLocationElem = document.querySelector('#js-select-location');
+const searchInput = document.querySelector('#js-search-input');
+const searchBtn = document.querySelector('#js-btn-search');
+console.log(searchBtn);
+const loading = searchBtn.querySelector('#loading');
+async function handleSearch() {
+    const keyword = searchInput.value.trim();
+    const selectedLocation = selectLocationElem.value;
+
+    let url = 'jobs';
+
+    if (!keyword) {
+        searchResultElem.classList.add('d-none');
+        return;
+    }
+    searchResultElem.classList.remove('d-none');
+    url = `jobs?search=${keyword}`;
+
+    if (selectedLocation !== 'all') {
+        url += `&location.slug=${selectedLocation}`;
+    }
+
+    loadSkeletonJobs(resultListElem, 8, 'col');
+    searchBtn.disabled = true;
+    loading.classList.remove('d-none');
+
+    const response = await instance.get({ url });
+    if (!response) {
+        console.error('Failed to load jobs');
+        return;
+    }
+    if (response.length === 0) {
+        resultListElem.innerHTML =
+            '<p class="text-start">Không tìm thấy kết quả phù hợp</p>';
+    } else loadJobs(resultListElem, response, 'col');
+
+    searchBtn.disabled = false;
+    loading.classList.add('d-none');
+    return;
+}
+
+searchInput.addEventListener('keyup', debounce(handleSearch, 500));
+selectLocationElem.addEventListener('change', debounce(handleSearch, 500));
